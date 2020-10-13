@@ -48,15 +48,15 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tvWinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="29dp"
         android:layout_marginBottom="36dp"
         android:text="@string/you_win"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2" />
+        app:layout_constraintBottom_toTopOf="@+id/ivYouResult"
+        app:layout_constraintEnd_toStartOf="@+id/ivYouResult" />
 
     <TextView
         android:id="@+id/textView6"
@@ -66,12 +66,12 @@
         android:layout_marginBottom="23dp"
         android:text="@string/vs"
         android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintStart_toEndOf="@+id/imageView" />
+        app:layout_constraintBottom_toBottomOf="@+id/ivComputerResult"
+        app:layout_constraintEnd_toStartOf="@+id/ivYouResult"
+        app:layout_constraintStart_toEndOf="@+id/ivComputerResult" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/ivComputerResult"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginStart="38dp"
@@ -84,7 +84,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/ivYouResult"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginEnd="39dp"
@@ -102,8 +102,8 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="15dp"
         android:text="@string/computer"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintEnd_toEndOf="@+id/ivComputerResult"
+        app:layout_constraintTop_toBottomOf="@+id/ivComputerResult" />
 
     <TextView
         android:id="@+id/textView8"
@@ -112,8 +112,8 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="20dp"
         android:text="@string/you"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintStart_toStartOf="@+id/ivYouResult"
+        app:layout_constraintTop_toBottomOf="@+id/ivYouResult" />
 
     <ImageView
         android:id="@+id/ivRockClick"
