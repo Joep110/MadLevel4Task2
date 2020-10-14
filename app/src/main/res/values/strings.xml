@@ -18,4 +18,9 @@
     <string name="vs">V.S.</string>
     <string name="computer">Computer</string>
     <string name="you">You</string>
+    <string name="draw">DRAW</string>
+    <string name="win">WIN</string>
+    <string name="lose">LOSE</string>
+    <string name="game_history">History</string>
+    <string name="delete_all">Delete all</string>
 </resources>

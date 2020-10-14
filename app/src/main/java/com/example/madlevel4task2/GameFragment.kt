@@ -83,13 +83,13 @@ class GameFragment : Fragment() {
         var result: String
 
         if (playerMove == computerMove) {
-            result = "DRAW"
+            result = getString(R.string.draw)
         } else if ((playerMove == 2 && computerMove == 3) ||
             (playerMove == 1 && computerMove == 2) ||
             (playerMove == 3 && computerMove == 1)) {
-            result = "WIN"
+            result = getString(R.string.win)
         } else {
-            result = "LOSE"
+            result = getString(R.string.lose)
         }
 
         return result
