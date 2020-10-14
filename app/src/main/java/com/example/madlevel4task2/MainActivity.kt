@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        println(item.itemId)
         return when (item.itemId) {
             R.id.btnGameHistory -> {
                 navController.navigate(R.id.action_gameFragment_to_historyFragment)

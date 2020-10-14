@@ -49,9 +49,8 @@ class GameFragment : Fragment() {
     }
 
     private fun addGame(playerMove: Int) {
-        val computerMove = (0..4).random()
+        val computerMove = (1..3).random()
         val result = checkGameResults(playerMove, computerMove)
-        updateUI(playerMove, computerMove, result)
         mainScope.launch {
             val game = Game(
                 date = Date(),
@@ -63,11 +62,11 @@ class GameFragment : Fragment() {
                 gameRepository.insertGame(game)
             }
         }
-
+        updateUI(playerMove, computerMove, result)
+        setScore()
     }
 
     private fun updateUI(playerMove: Int, computerMove: Int, result: String) {
-        setScore()
         tvWinner.text = result
         when (computerMove) {
             1 -> ivComputerResult.setImageResource(R.drawable.paper)
@@ -95,7 +94,7 @@ class GameFragment : Fragment() {
             gameLose = withContext(Dispatchers.IO) {
                 gameRepository.countLose()
             }
-            tvResult.text = getString(R.string.statistic_score, gameDraws, gameWin, gameLose)
+            tvResult.text = getString(R.string.statistic_score, gameWin, gameDraws, gameLose)
         }
     }
 
@@ -111,7 +110,6 @@ class GameFragment : Fragment() {
         } else {
             result = getString(R.string.lose)
         }
-
         return result
     }
 }
