@@ -33,6 +33,7 @@ class GameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         gameRepository = GameRepository(requireContext())
+        setScore()
 
         ivPaperClick.setOnClickListener{
             addGame(1)
@@ -66,6 +67,7 @@ class GameFragment : Fragment() {
     }
 
     private fun updateUI(playerMove: Int, computerMove: Int, result: String) {
+        setScore()
         tvWinner.text = result
         when (computerMove) {
             1 -> ivComputerResult.setImageResource(R.drawable.paper)
@@ -76,6 +78,24 @@ class GameFragment : Fragment() {
             1 -> ivYouResult.setImageResource(R.drawable.paper)
             2 -> ivYouResult.setImageResource(R.drawable.rock)
             3 -> ivYouResult.setImageResource(R.drawable.scissors)
+        }
+    }
+
+    private fun setScore() {
+        var gameDraws = 0
+        var gameWin = 0
+        var gameLose = 0
+        mainScope.launch {
+            gameDraws = withContext(Dispatchers.IO) {
+                gameRepository.countDraws()
+            }
+            gameWin = withContext(Dispatchers.IO) {
+                gameRepository.countWins()
+            }
+            gameLose = withContext(Dispatchers.IO) {
+                gameRepository.countLose()
+            }
+            tvResult.text = getString(R.string.statistic_score, gameDraws, gameWin, gameLose)
         }
     }
 

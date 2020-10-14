@@ -12,7 +12,7 @@
     <string name="welcome">Welcome</string>
     <string name="game_instructions">Instructions: select rock, paper or scissors to play.</string>
     <string name="statistic_title">Your all time statistics</string>
-    <string name="statistic_score">Win: 0 Draw: 5 Lose: 10</string>
+    <string name="statistic_score">Win: %d Draw: %d Lose: %d</string>
     <string name="you_win">You win!</string>
     <string name="you_lose">You lose!</string>
     <string name="vs">V.S.</string>
@@ -23,4 +23,5 @@
     <string name="lose">LOSE</string>
     <string name="game_history">History</string>
     <string name="delete_all">Delete all</string>
+    <string name="time">time</string>
 </resources>

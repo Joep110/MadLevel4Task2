@@ -9,7 +9,7 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/btnDelete"
+        android:id="@+id/btnDeleteAllGames"
         android:icon="@drawable/ic_delete_white_24dp"
         android:title="@string/delete_all"
         app:showAsAction="ifRoom" />
