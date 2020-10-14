@@ -1,6 +1,5 @@
 package com.example.madlevel4task2
 
-import android.provider.ContactsContract
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey

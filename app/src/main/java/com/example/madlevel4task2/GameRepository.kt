@@ -1,4 +1,4 @@
-package com.example.madlevel4task1
+package com.example.madlevel4task2
 
 import android.content.Context
 import com.example.madlevel4task2.Game

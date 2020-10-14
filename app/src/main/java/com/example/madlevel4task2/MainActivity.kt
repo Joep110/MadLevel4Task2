@@ -1,17 +1,11 @@
 package com.example.madlevel4task2
 
-import android.app.Application
-import android.graphics.drawable.Drawable
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
@@ -26,25 +20,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
-        menuToggler(menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.btnGameHistory -> {
-                navController.navigate(R.id.action_gameFragment_to_historyFragment)
-                true
-            }
-            16908332 -> {
-                navController.navigate(R.id.action_historyFragment_to_gameFragment)
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-    private fun menuToggler(menu: Menu) {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id in arrayOf(R.id.gameFragment)) {
                 menu.findItem(R.id.btnGameHistory).isVisible = true
@@ -59,6 +34,21 @@ class MainActivity : AppCompatActivity() {
                 supportActionBar?.setDisplayShowHomeEnabled(true)
                 supportActionBar?.title = "Your Game History"
             }
+        }
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.btnGameHistory -> {
+                navController.navigate(R.id.action_gameFragment_to_historyFragment)
+                true
+            }
+            16908332 -> {
+                navController.navigate(R.id.action_historyFragment_to_gameFragment)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

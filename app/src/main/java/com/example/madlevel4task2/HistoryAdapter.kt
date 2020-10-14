@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.fragment_game.*
 import kotlinx.android.synthetic.main.item_game.view.*
 
 class PortalAdapter(private val portals: List<Game>) : RecyclerView.Adapter<PortalAdapter.ViewHolder>() {
@@ -12,12 +11,16 @@ class PortalAdapter(private val portals: List<Game>) : RecyclerView.Adapter<Port
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
         fun databind(game: Game) {
-            if (game.result == "WIN") {
-                itemView.tvResult.text = "You win"
-            } else if (game.result == "LOSE") {
-                itemView.tvResult.text = "Computer wins"
-            } else {
-                itemView.tvResult.text = game.result
+            when (game.result) {
+                "WIN" -> {
+                    itemView.tvResult.text = "You win"
+                }
+                "LOSE" -> {
+                    itemView.tvResult.text = "Computer wins"
+                }
+                else -> {
+                    itemView.tvResult.text = game.result
+                }
             }
             itemView.tvTime.text = game.date.toString()
             when (game.computerMove.toInt()) {

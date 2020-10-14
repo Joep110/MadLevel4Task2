@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
-import com.example.madlevel4task1.GameRepository
 import kotlinx.android.synthetic.main.fragment_game.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -99,17 +97,14 @@ class GameFragment : Fragment() {
     }
 
     private fun checkGameResults(playerMove: Int, computerMove: Int) : String {
-        var result: String
-
-        if (playerMove == computerMove) {
-            result = getString(R.string.draw)
+        return if (playerMove == computerMove) {
+            getString(R.string.draw)
         } else if ((playerMove == 2 && computerMove == 3) ||
             (playerMove == 1 && computerMove == 2) ||
             (playerMove == 3 && computerMove == 1)) {
-            result = getString(R.string.win)
+            getString(R.string.win)
         } else {
-            result = getString(R.string.lose)
+            getString(R.string.lose)
         }
-        return result
     }
 }
